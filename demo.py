@@ -39,9 +39,9 @@ def start_pool():
 
     # Creamos las conexión con la base de datos usando variables de entorno.
     # Las variables de entorno en este caso son 
-        #[oracle@bd ~]$ export PYTHON_CONNECTSTRING=192.168.122.176/ORCLCDB
-        #[oracle@bd ~]$ export PYTHON_PASSWORD=celia
-        #[oracle@bd ~]$ export PYTHON_USERNAME=c##celia
+        #[oracle@bd ~]$ export PYTHON_CONNECTSTRING=localhost/ORCLCDB
+        #[oracle@bd ~]$ export PYTHON_PASSWORD=ivan
+        #[oracle@bd ~]$ export PYTHON_USERNAME=c##ivan
     
     pool_min = 4
     pool_max = 4
