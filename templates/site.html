@@ -3,34 +3,8 @@
 {% block body %}
 <div class="inner">
     <h1>Bienvenido {{ nombre }}<span><br />
-    Esto es una prueba para base de datos<br>
-    This is a test of databases</span></h1>
+    Esto es una prueba para base de datos<br></span></h1>
     <span><p>Enhorabuena está conectado a la base de datos</p></span>
-
-
-    {% if tablas %}
-    	<div class="inner">
-    		<header>
-    			<h2>LISTA DE TABLAS</h2>
-    		</header>
-    		<div class="inner" id="formulario">
-    			<section>
-                    <h3>TABLAS</h3>
-                    <table>
-                        <tr>
-                            <td>Nombres de las tablas</td>
-                        </tr>
-    					{% for elem in tablas -%}
-                            {% for i in elem -%}
-                             <tr>
-                                 <td><strong>{{i[0]}}</strong></td>
-                                 <td><u><a href="/tabla/{{i[0]}}">registros</a></u></td>
-                             </tr>
-                            {% endfor -%}
-    					{% endfor -%}
-                    </table>
-    			</section>
-    		</div>
-    	</div>
+</div>
     {% endif %}
 {% endblock %}
