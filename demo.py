@@ -9,7 +9,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # Crear un formulario que sirva como login para la base de datos de oracle en la que vamos a trabajar.
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         # Recogemos los datos del formulario
@@ -31,7 +31,7 @@ def login():
 
 # Creamos una ruta para la página principal en la cual se nos mostrarán todas las tablas de la base de datos. 
 @app.route('/site')
-def index():
+def site():
     return render_template('site.html')
 
 # Creamos una ruta para la página de error
