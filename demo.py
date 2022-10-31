@@ -9,7 +9,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # Crear un formulario que sirva como login para la base de datos de oracle en la que vamos a trabajar.
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         # Recogemos los datos del formulario
@@ -26,13 +26,13 @@ def login():
         # Cerramos la conexión
         con.close()
         # Devolvemos los datos
-        return render_template('index.html', datos=datos)
+        return render_template('site.html', datos=datos)
     return render_template('login.html')
 
 # Creamos una ruta para la página principal en la cual se nos mostrarán todas las tablas de la base de datos. 
-@app.route('/')
+@app.route('/site')
 def index():
-    return render_template('index.html')
+    return render_template('site.html')
 
 # Creamos una ruta para la página de error
 @app.errorhandler(404)
@@ -41,4 +41,4 @@ def page_not_found(error):
 
 # Iniciar la aplicación web
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=int(os.environ.get('PORT', '8080')))
