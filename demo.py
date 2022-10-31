@@ -32,11 +32,7 @@ def index():
 # Creamos una ruta para la página principal en la cual se nos mostrarán todas las tablas de la base de datos. 
 @app.route('/site')
 def site():
-    connection = pool.acquire()
-    cursor = connection.cursor()
-    cursor.execute("select * from cat")
-    res = cursor.fetchall()
-    return render_template("site.html",tablas=[res])
+    return render_template('site.html')
 
 # Creamos una ruta para la página de error
 @app.errorhandler(404)
