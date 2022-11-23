@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block customCSS %}
+<link rel="stylesheet" href="../static/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	  <div class="main">
+		<p class="sign" align="center">Iniciar sesión</p>
+		<form class="form1" action="/login" method="POST">
+		  <input class="un " type="text" align="center" name="user" required="true" placeholder="Usuario">
+		  <input class="pass" type="password" align="center" name="pass" required="true" placeholder="Contraseña">
+		  <a class="submit" align="center">Iniciar Sesión</a>
+		  <input type="submit" value="Iniciar Sesión" class="submit" />
+		  <p class="forgot" align="center"><a href="#">¿Contraseña olvidada?</p>
+		</form>
+		</div> 
+{% endblock %}
+	
