@@ -5,5 +5,6 @@ La app se conecta con una base de datos en Oracle utilzando unas variables de en
 
 APLICACIÓN COMPLETA
 ![1](https://user-images.githubusercontent.com/92149012/203615757-403e79d5-abd1-4fec-8f6c-3e946f8eb568.png)
-![2](https://user-images.githubusercontent.com/92149012/203615750-adc50167-0041-400a-a717-d5df57a8164a.png)
-
+![2](https://user-images.githubusercontent.com/92149012/204115085-6df56366-59d8-4562-9e06-dacd0b82faa6.png)
+![3](https://user-images.githubusercontent.com/92149012/204115093-a8e44979-0843-493b-a3d3-ae4ee272a03b.png)
+![4](https://user-images.githubusercontent.com/92149012/204115100-c766d247-fe11-4b31-890c-f013dd4b76d8.png)
