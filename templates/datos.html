@@ -7,30 +7,13 @@
 {% endblock %}
 
 {% block body %}
+
 <table>
-    <thead>
-        <tr>
-            <th>Codigo</th>
-            <th>Sucursal</th>
-            <th>Nombre</th>
-            <th>Area de Trabajo</th>
-            <th>Comision</th>
-            <th>Teléfono</th>
-            <th>País</th>
-        </tr>
-    </thead>
-    <tbody>
-{% for i in resultado -%}
-        <tr>
-            <td>{{ i[0] }}</td>
-            <td>{{ i[1] }}</td>
-            <td>{{ i[2] }}</td>
-            <td>{{ i[3] }}</td>
-            <td>{{ i[4] }}</td>
-            <td>{{ i[5] }}</td>
-            <td>{{ i[6] }}</td>
-        </tr>
-{% endfor -%}
-    </tbody>
+    <tr>
+        {% for i in resultado -%}
+        <th>{{ i[0] }}</th>
+        {% endfor -%}
+    </tr>
 </table>
+
 {% endblock %}
