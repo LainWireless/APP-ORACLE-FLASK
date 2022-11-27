@@ -45,34 +45,23 @@ def index():
 @app.route('/login',methods=["GET","POST"])
 def login():
     if request.method=="POST":
-        texto=request.form.get("user")
-        print ('texto=',texto)
-        texto2=request.form.get("pass")
-        print ('texto2=',texto2)
-        if texto=='c##ivan' and texto2=='ivan':
-            connection=cx_Oracle.connect(
-	        user='c##ivan',
-	        password='ivan',
-	        dsn='192.168.122.177:1521/ORCLCDB',
-	        encoding='UTF-8')
-            cursor = connection.cursor()
-            cursor.execute("select codigo from agentes")
-            resultado = cursor.fetchall()
-            cursor.execute("select sucursal from agentes")
-            resultado2 = cursor.fetchall()
-            cursor.execute("select nombre from agentes")
-            resultado3 = cursor.fetchall()
-            cursor.execute("select area_trabajo from agentes")
-            resultado4 = cursor.fetchall()
-            cursor.execute("select comision from agentes")
-            resultado5 = cursor.fetchall()
-            cursor.execute("select telefono from agentes")
-            resultado6 = cursor.fetchall()
-            cursor.execute("select pais from agentes")
-            resultado7 = cursor.fetchall()
-            return render_template("datos.html",resultado=resultado,resultado2=resultado2,resultado3=resultado3,resultado4=resultado4,resultado5=resultado5,resultado6=resultado6,resultado7=resultado7)
+        text1=request.form.get("user")
+        print ('text1=',text1)
+        text2=request.form.get("pass")
+        print ('text2=',text2)
+        connection=cx_Oracle.connect(
+            user=text1,
+            password=text2,
+            dsn='192.168.122.177:1521/ORCLCDB',
+            encoding='UTF-8')
+        if connection:
+            cursor=connection.cursor()
+            cursor.execute("select * from cat")
+            resultado=cursor.fetchall()
+            print(resultado)
+            return render_template('datos.html',resultado=resultado)
         else:
-            return redirect(url_for('login'))
+            return render_template('login.html')
     else:
         return render_template("login.html")
 
